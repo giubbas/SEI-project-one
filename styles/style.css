@@ -1,0 +1,63 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0px;
+  padding: 0px;
+}
+
+main{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#grid{
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#cover{
+  background: red;
+  position: absolute;
+  width: 500px;
+  height: 500px;
+}
+
+.cell{
+  height: 10%;
+  width: 10%;
+  border: 1px solid black;
+}
+
+.gem{
+  background: green;
+}
+
+.gem-shot{
+  background: yellow;
+}
+
+.rainbow-shot{
+  background: blue;
+}
+
+.dark-clouds{
+  background: grey;
+}
+
+.drop-lightning{
+  background: orange;
+}
+
+.colpito{
+  background: purple;
+}
+
+.blink-me{
+  animation: blinker 2s linear infinite;
+}
