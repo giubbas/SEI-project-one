@@ -61,3 +61,11 @@ main{
 .blink-me{
   animation: blinker 2s linear infinite;
 }
+
+.rainbow-vomit{
+  background: brown;
+}
+
+.display-none{
+  display: none;
+}
