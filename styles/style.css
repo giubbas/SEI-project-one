@@ -35,7 +35,8 @@ main{
 }
 
 .gem{
-  background: green;
+  background-image: url('../assets/gem.png');
+  background-size: cover;
 }
 
 .gem-shot{
@@ -43,7 +44,8 @@ main{
 }
 
 .rainbow-shot{
-  background: blue;
+  background-image: url('../assets/rainbow-shot.png');
+  background-size: cover;
 }
 
 .dark-clouds{
@@ -63,7 +65,8 @@ main{
 }
 
 .rainbow-vomit{
-  background: brown;
+  background-image: url('../assets/gem-shooting.png');
+  background-size: cover;
 }
 
 .display-none{

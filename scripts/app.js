@@ -8,7 +8,7 @@ function init() {
   const gemStartPosition = 94
   let gemCurrentPosition = gemStartPosition
   let enemiesStart = [1, 2, 3, 4, 5, 6, 7, 8, 11, 12, 13, 14, 15, 16, 17, 18, 21, 22, 23, 24, 25, 26, 27, 28, 31, 32, 33, 34, 35, 36, 37, 38]
-  let enemies = [1, 2, 3, 4, 5, 6, 7, 8, 11, 12, 13, 14, 15, 16, 17, 18, 21, 22, 23, 24, 25, 26, 27, 28, 31, 32, 33, 34, 35, 36, 37, 38]
+  let enemies = enemiesStart
   let direction = 'forward'
   let cloudsKilled = []
   let enemiesCurrentPosition = enemies
@@ -16,7 +16,6 @@ function init() {
   let enemiesBoltInterval
   let gemLives = 3
   let score = 0
-  let isStarted
 
   // Elements
   const grid = document.getElementById('grid')
@@ -42,9 +41,9 @@ function init() {
     cover.classList.add('display-none')
     addGemClass(gemStartPosition)
     addEnemies()
-    isStarted = true
     enemiesMoveInterval = setInterval(enemiesMovement, 1000)
     enemiesBoltInterval = setInterval(enemiesShot, 2000)
+    enemiesStart = [1, 2, 3, 4, 5, 6, 7, 8, 11, 12, 13, 14, 15, 16, 17, 18, 21, 22, 23, 24, 25, 26, 27, 28, 31, 32, 33, 34, 35, 36, 37, 38]
   }
 
   // ---------------------------------------------- GEM ---------------------------------------------- //
@@ -76,6 +75,7 @@ function init() {
     }
     addGemClass(gemCurrentPosition)
   }
+
   // Add to Gem the 'rainbow-vomit' class
   function handleKeyup(e) {
     const key = e.keyCode
@@ -124,16 +124,8 @@ function init() {
 
   // Draw enemies
   function addEnemies() {
-    if (enemiesCurrentPosition.length > 0 && isStarted === false) {
-      for (let i = 0; i < enemiesCurrentPosition.length; i++) {
-        cells[enemiesCurrentPosition[i]].classList.add('dark-clouds')
-      }
-    } else {
-      for (let i = 0; i < enemiesStart.length; i++) {
-        cells[enemiesStart[i]].classList.add('dark-clouds')
-        isStarted = false
-        
-      }
+    for (let i = 0; i < enemiesCurrentPosition.length; i++) {
+      cells[enemiesCurrentPosition[i]].classList.add('dark-clouds')
     }
   }
   
@@ -250,8 +242,17 @@ function init() {
     cover.classList.remove('display-none')
     clearInterval(enemiesMoveInterval)
     clearInterval(enemiesBoltInterval)
+    enemiesCurrentPosition = enemiesStart
+    enemies = enemiesStart
+    console.log(enemiesStart)
     score = 0
+    scoreDisplay.innerText = 0
+    gemLives = 3
     cells.forEach(item => item.classList.remove('dark-clouds'))
+    cells.forEach(item => item.classList.remove('gem'))
+    gemCurrentPosition = 94
+    cloudsKilled = []
+    direction = 'forward'
   }
 
   // Events
