@@ -7,36 +7,41 @@
   <title>Gem the cloud</title>
   <link rel="stylesheet" href="styles/style.css">
   <script src="scripts/app.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
   <main>
     <!-- scoreboard -->
     <div id="scoreboard">
-      <h3>score <span id="score">00</span></h3>
+      <h3>score: <span id="score">00</span></h3>
       <div id="lives">
-        <h3>lives</h3>
-        <img id="first-life" src="" alt="">
-        <img id="second-life" src="" alt="">
-        <img id="third-life" src="" alt="">
+        <h3>lives:</h3>
+        <img id="first-life" src="assets/life.png" alt="">
+        <img id="second-life" src="assets/life.png" alt="">
+        <img id="third-life" src="assets/life.png" alt="">
       </div>
-      <button id="back">back</button>
+      <button id="back">BACK</button>
     </div>
     <!-- grid -->
-    <div id="grid">
-      <!-- screen cover -->
-      <div id="cover">
-        <h1>GEM</h1>
-        <h2>the cloud</h2>
-        <p>press</p>
-        <button id="start">START</button>
+    <div id="grid-wrapper">
+      <div id="grid">
+        <!-- screen cover -->
+        <div id="cover">
+          <h1>GEM</h1>
+          <h2>the cloud</h2>
+          <p>press</p>
+          <button id="start">START</button>
+        </div>
       </div>
     </div>
     <!-- instructions -->
     <div id="instructions">
       <ul>
-        <li><img src="" alt="">move left</li>
-        <li><img src="" alt="">move right</li>
-        <li><img src="" alt="">shoot</li>
+        <li><img src="" alt="">Move left:</li>
+        <li><img src="" alt="">Move right:</li>
+        <li><img src="" alt="">Shoot:</li>
       </ul>
     </div>
   </main>

@@ -29,7 +29,6 @@ function init() {
       const cell = document.createElement('div')
       cell.id = i
       cell.className = 'cell'
-      cell.innerText = i
       grid.appendChild(cell)
       cells.push(cell)
     }
@@ -106,11 +105,11 @@ function init() {
         killed = enemies.indexOf(shotPosition)
         cloudsKilled.push(killed)
         cells[shotPosition].classList.remove('rainbow-shot', 'dark-clouds')
-        cells[shotPosition].classList.add('colpito')
+        cells[shotPosition].classList.add('hitted')
 
         // remove boom animation
         setTimeout(function() {
-          cells[shotPosition].classList.remove('colpito')
+          cells[shotPosition].classList.remove('hitted')
         }, 200)
 
         clearInterval(shotInterval)
@@ -181,7 +180,7 @@ function init() {
       
       if (boltPosition > 100) {
         clearInterval(boltInterval)
-        cells.forEach(item => item.classList.remove('colpito'))
+        cells.forEach(item => item.classList.remove('blink-me'))
         return
       }
       cells[boltPosition].classList.add('drop-lightning')
@@ -192,19 +191,19 @@ function init() {
         cells[boltPosition].classList.remove('drop-lightning')
 
         // Adding boom animation
-        cells[gemCurrentPosition].classList.add('colpito')
+        cells[gemCurrentPosition].classList.add('blink-me')
 
         // Remove boom animation
         setTimeout(function() {
           for (let i = 90; i < cells.length; i++) {
-            cells[i].classList.remove('colpito')
+            cells[i].classList.remove('blink-me')
           }
         }, 200)
         clearInterval(boltInterval)
         return
       }
     }
-    boltInterval = setInterval(bolt, 100)
+    boltInterval = setInterval(bolt, 250)
   }
 
   // Taking track of enemies position

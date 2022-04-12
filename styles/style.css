@@ -1,10 +1,13 @@
 *{
   box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
 }
 
 body{
+  height: 100vh;
   margin: 0px;
   padding: 0px;
+  background: linear-gradient(135deg, #5f9bfb, #68d7ff);
 }
 
 main{
@@ -14,33 +17,91 @@ main{
   transform: translate(-50%, -50%);
 }
 
-#grid{
-  width: 500px;
-  height: 500px;
+#grid-wrapper{
+  width: 620px;
+  height: 620px;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-#cover{
-  background: red;
-  position: absolute;
-  width: 500px;
-  height: 500px;
+#grid{
+  width: 600px;
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url(../assets/game-background.png);
+  background-size: cover;
 }
 
 .cell{
   height: 10%;
   width: 10%;
-  border: 1px solid black;
+}
+
+#cover{
+  background: white;
+  position: absolute;
+  width: 600px;
+  height: 600px;
+}
+
+#scoreboard, #grid-wrapper, #instructions{
+  border-radius: 5px;
+  background: black;
+}
+
+#scoreboard{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  margin-bottom: 10px;
+  font-size: 13px;
+  padding: 10px 0 10px 0;
+}
+
+#lives{
+  display: flex;
+  align-items: center;
+}
+
+h3{
+  display: inline-block;
+  margin-right: 15px;
+}
+
+#scoreboard img{
+  width: 20px;
+  margin-right: 7px;
+}
+
+#scoreboard button{
+  background: transparent;
+  color: white;
+  border: none;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  cursor: pointer;
+}
+
+#instructions{
+  color: white;
+}
+
+#instructions ul{
+  font-size: 12px;
+  list-style-type: none;
+}
+
+#instructions li{
+  display: inline-block;
+  padding: 15px 0 15px 0;
 }
 
 .gem{
   background-image: url('../assets/gem.png');
   background-size: cover;
-}
-
-.gem-shot{
-  background: yellow;
 }
 
 .rainbow-shot{
@@ -49,20 +110,30 @@ main{
 }
 
 .dark-clouds{
-  background: grey;
+  background-image: url(../assets/enemy.png);
+  background-size: cover;
 }
 
 .drop-lightning{
-  background: orange;
+  background-image: url(../assets/bolt.png);
+  background-size: cover;
 }
 
 .colpito{
   background: purple;
 }
 
-.blink-me{
-  animation: blinker 2s linear infinite;
+.hitted{
+  background-image: url(../assets/darkClouds-boom.gif);
+  background-size: cover;
 }
+
+.blink-me {
+  background-image: url('../assets/hitted.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+} 
 
 .rainbow-vomit{
   background-image: url('../assets/gem-shooting.png');
