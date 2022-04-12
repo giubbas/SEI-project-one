@@ -23,6 +23,14 @@ function init() {
   const cover = document.getElementById('cover')
   const scoreDisplay = document.getElementById('score')
   const backBtn = document.getElementById('back')
+  const alert = document.getElementById('alert')
+  const alertResult = document.getElementById('result')
+  const alertScore = document.getElementById('score-alert')
+  const alertQuit = document.getElementById('quit-alert')
+  const liveOne = document.getElementById('first-life')
+  const liveTwo = document.getElementById('second-life')
+  const liveThree = document.getElementById('third-life')
+  
   // Create the grid
   function createGrid() {
     for (let i = 0; i < cellCount; i++) {
@@ -119,6 +127,16 @@ function init() {
     shotInterval = setInterval(shotMovement, 100)
   }
 
+  function removeLives() {
+    if (gemLives === 2) {
+      liveThree.classList.add('visibility-hidden')
+    } else if (gemLives === 1) {
+      liveTwo.classList.add('visibility-hidden')
+    } else if (gemLives === 0) {
+      liveOne.classList.add('visibility-hidden')
+    }
+  }
+
   // ---------------------------------------------- ENEMIES ---------------------------------------------- //
 
   // Draw enemies
@@ -188,6 +206,7 @@ function init() {
       // Check impact
       if (cells[boltPosition].classList.contains('gem')) {
         gemLives -= 1
+        removeLives()
         cells[boltPosition].classList.remove('drop-lightning')
 
         // Adding boom animation
@@ -223,6 +242,9 @@ function init() {
     if (enemiesCurrentPosition.length === 0) {
       clearInterval(enemiesMoveInterval)
       clearInterval(enemiesBoltInterval)
+      alert.classList.remove('display-none')
+      alertResult.innerText = 'You won!'
+      alertScore.innerText = `score: ${score}`
     }
   }
 
@@ -231,6 +253,9 @@ function init() {
       if (item > 89 || gemLives === 0) {
         clearInterval(enemiesMoveInterval)
         clearInterval(enemiesBoltInterval)
+        alert.classList.remove('display-none')
+        alertResult.innerText = 'You lost!'
+        alertScore.innerText = `score: ${score}`
       } 
     })
   }
@@ -245,13 +270,17 @@ function init() {
     enemies = enemiesStart
     console.log(enemiesStart)
     score = 0
-    scoreDisplay.innerText = 0
+    scoreDisplay.innerText = '000'
     gemLives = 3
     cells.forEach(item => item.classList.remove('dark-clouds'))
     cells.forEach(item => item.classList.remove('gem'))
     gemCurrentPosition = 94
     cloudsKilled = []
     direction = 'forward'
+    alert.classList.add('display-none')
+    liveOne.classList.remove('visibility-hidden')
+    liveTwo.classList.remove('visibility-hidden')
+    liveThree.classList.remove('visibility-hidden')
   }
 
   // Events
@@ -259,6 +288,7 @@ function init() {
   document.addEventListener('keydown', handleKeyDown)
   document.addEventListener('keyup', handleKeyup)
   backBtn.addEventListener('click', back)
+  alertQuit.addEventListener('click', back)
 }
 
 window.addEventListener('DOMContentLoaded', init)

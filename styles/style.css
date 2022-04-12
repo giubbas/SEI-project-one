@@ -7,7 +7,14 @@ body{
   height: 100vh;
   margin: 0px;
   padding: 0px;
-  background: linear-gradient(135deg, #5f9bfb, #68d7ff);
+  background: linear-gradient(135deg, #2cd491, #92dd99);
+}
+
+.body-clouds{
+  display: none;
+  width: 700px;
+  margin-top: 150px;
+  margin-left: 100px;
 }
 
 main{
@@ -44,6 +51,30 @@ main{
   position: absolute;
   width: 600px;
   height: 600px;
+  text-align: center;
+  background-image: url(../assets/cover-background.png);
+  background-size: cover;
+}
+
+h1{
+  font-size: 120px;
+  text-shadow: 6px 4px white;
+  margin: 150px 0 0 0;
+  z-index: 2;
+}
+
+#cover button{
+  cursor: pointer;
+  background: #FF6B6B;
+  margin-top: 40px;
+  padding: 15px 50px;
+  color: white;
+  font-size: 18px;
+  font-size: 1;
+  box-shadow: 7px 7px black;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+  border: 3px solid black;
 }
 
 #scoreboard, #grid-wrapper, #instructions{
@@ -76,9 +107,9 @@ h3{
   margin-right: 7px;
 }
 
-#scoreboard button{
+#scoreboard button, #alert button{
   background: transparent;
-  color: white;
+  color: #FF6B6B;
   border: none;
   text-decoration: underline;
   text-decoration-thickness: 3px;
@@ -87,16 +118,46 @@ h3{
 
 #instructions{
   color: white;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
 }
 
-#instructions ul{
+#instructions div{
   font-size: 12px;
-  list-style-type: none;
-}
-
-#instructions li{
   display: inline-block;
   padding: 15px 0 15px 0;
+  display: flex;
+  align-items: center;
+}
+
+#move-right, #move-left{
+  width: 40px;
+  margin-right: 10px;
+}
+
+#space-bar{
+  width: 100px;
+  margin-right: 10px;
+}
+
+#alert{
+  position: absolute;
+  text-align: center;
+  background: black;
+  color: white;
+  padding: 30px 80px;
+  border: 3px solid white;
+}
+
+#alert h3{
+  font-size: 40px;
+  margin: 0 0 15px 0;
+}
+
+#alert h4{
+  font-size: 15px;
+  margin-bottom: 30px;
 }
 
 .gem{
@@ -142,4 +203,27 @@ h3{
 
 .display-none{
   display: none;
+}
+
+.visibility-hidden{
+  visibility: hidden;
+}
+
+/* --------------------------------------------- ANIMATIONS --------------------------------------------- */
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
 }

@@ -12,37 +12,41 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+  <img class="body-clouds" src="assets/body-clouds.png" alt="">
+  <img class="body-clouds" src="assets/body-clouds.png" alt="">
   <main>
     <!-- scoreboard -->
     <div id="scoreboard">
-      <h3>score: <span id="score">00</span></h3>
+      <h3>score: <span id="score">000</span></h3>
       <div id="lives">
         <h3>lives:</h3>
         <img id="first-life" src="assets/life.png" alt="">
         <img id="second-life" src="assets/life.png" alt="">
         <img id="third-life" src="assets/life.png" alt="">
       </div>
-      <button id="back">BACK</button>
+      <button id="back">QUIT</button>
     </div>
     <!-- grid -->
     <div id="grid-wrapper">
-      <div id="grid">
-        <!-- screen cover -->
-        <div id="cover">
-          <h1>GEM</h1>
-          <h2>the cloud</h2>
-          <p>press</p>
-          <button id="start">START</button>
-        </div>
+      <!-- screen cover -->
+      <div id="cover">
+        <h1>GEM</h1>
+        <h2>the cloud</h2>
+        <button class="pulse animated infinite" id="start">PLAY</button>
+      </div>
+      <div id="grid"></div>
+      <!-- Alert -->
+      <div class="display-none" id="alert">
+        <h3 id="result">You won!</h3>
+        <h4 id="score-alert">score: <span>00</span> </h4>
+        <button id="quit-alert">QUIT</button>
       </div>
     </div>
     <!-- instructions -->
     <div id="instructions">
-      <ul>
-        <li><img src="" alt="">Move left:</li>
-        <li><img src="" alt="">Move right:</li>
-        <li><img src="" alt="">Shoot:</li>
-      </ul>
+      <div><img id="move-left" src="assets/left-key.png" alt="">Move left</div>
+      <div><img id="move-right" src="assets/right-key.png" alt="">Move right</div>
+      <div><img id="space-bar" src="assets/space-bar.png" alt="">Shoot</div>
     </div>
   </main>
 </body>
