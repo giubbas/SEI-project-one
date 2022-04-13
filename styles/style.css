@@ -83,6 +83,7 @@ h1{
 }
 
 #scoreboard{
+  height: 65.41px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -152,6 +153,7 @@ i{
 }
 
 #instructions{
+  height: 65.41px;
   color: white;
   display: flex;
   justify-content: space-around;
@@ -167,7 +169,7 @@ i{
 }
 
 #move-right, #move-left{
-  width: 40px;
+  width: 35px;
   margin-right: 10px;
 }
 
