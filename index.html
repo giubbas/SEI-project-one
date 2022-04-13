@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/143b780cef.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <img class="body-clouds" src="assets/body-clouds.png" alt="">
@@ -17,14 +18,17 @@
   <main>
     <!-- scoreboard -->
     <div id="scoreboard">
-      <h3>score: <span id="score">000</span></h3>
+      <div id="score-display">
+        <h3>score: <span id="score">000</span></h3>
+      </div>
       <div id="lives">
         <h3>lives:</h3>
         <img id="first-life" src="assets/life.png" alt="">
         <img id="second-life" src="assets/life.png" alt="">
         <img id="third-life" src="assets/life.png" alt="">
       </div>
-      <button id="back">QUIT</button>
+      <button class="sound-on" id="mute"></button>
+      <button id="quit">QUIT</button>
     </div>
     <!-- grid -->
     <div id="grid-wrapper">
@@ -49,5 +53,13 @@
       <div><img id="space-bar" src="assets/space-bar.png" alt="">Shoot</div>
     </div>
   </main>
-</body>
+      <!-- Audio -->
+  <audio id="background-music" src="audio/background-music.mp3"></audio>
+  <audio id="cloud-hitted" src="audio/cloud-hitted.wav"></audio>
+  <audio id="drop-bolt" src="audio/drop-bolt.wav"></audio>
+  <audio id="gem-hitted" src="audio/gem-hitted.wav"></audio>
+  <audio id="gem-shot" src="audio/gem-shot.wav"></audio>
+  <audio id="you-won" src="audio/you-won.wav"></audio>
+  <audio id="you-lost" src="audio/you-lost.wav"></audio>
+  <audio src=""></audio>
 </html>

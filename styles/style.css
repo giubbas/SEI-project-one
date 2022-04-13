@@ -84,7 +84,7 @@ h1{
 
 #scoreboard{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   color: white;
   margin-bottom: 10px;
@@ -92,9 +92,18 @@ h1{
   padding: 10px 0 10px 0;
 }
 
+#scoreboard > *{
+  margin: 0 15px 0 15px;
+}
+
+#score-display{
+  width: 185px;
+}
+
 #lives{
   display: flex;
   align-items: center;
+  margin-left: 0px;
 }
 
 h3{
@@ -107,7 +116,33 @@ h3{
   margin-right: 7px;
 }
 
-#scoreboard button, #alert button{
+#mute{
+  width: 35px;
+  height: 35px;
+  border: none;
+  background-position: initial;
+  margin-top: 5px;
+  cursor: pointer;
+  background-size: contain;
+  margin-left: 10px;
+}
+
+.sound-on{
+  background: transparent;
+  background-image: url('../assets/sound.png');
+}
+
+.sound-off{
+  background: transparent;
+  background-image: url('../assets/sound-off.png');
+  background-size: 40px;
+}
+
+i{
+  font-size: 23px;
+}
+
+#quit, #alert button{
   background: transparent;
   color: #FF6B6B;
   border: none;

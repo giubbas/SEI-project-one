@@ -16,13 +16,14 @@ function init() {
   let enemiesBoltInterval
   let gemLives = 3
   let score = 0
+  let muteSound = false
 
   // Elements
   const grid = document.getElementById('grid')
   const startBtn = document.getElementById('start')
   const cover = document.getElementById('cover')
   const scoreDisplay = document.getElementById('score')
-  const backBtn = document.getElementById('back')
+  const backBtn = document.getElementById('quit')
   const alert = document.getElementById('alert')
   const alertResult = document.getElementById('result')
   const alertScore = document.getElementById('score-alert')
@@ -30,7 +31,23 @@ function init() {
   const liveOne = document.getElementById('first-life')
   const liveTwo = document.getElementById('second-life')
   const liveThree = document.getElementById('third-life')
-  
+  const muteBtn = document.getElementById('mute')
+
+  // Audio elements
+  const backgroundMusic = document.getElementById('background-music')
+  const youWonAudio = document.getElementById('you-won')
+  const youLostAudio = document.getElementById('you-lost')
+  const gemHittedAudio = document.getElementById('gem-hitted')
+  const cloudHittedAudio = document.getElementById('cloud-hitted')
+  const boltDropAudio = document.getElementById('drop-bolt')
+  const gemShotAudio = document.getElementById('gem-shot')
+  const allAudioElements = document.querySelectorAll('audio')
+
+  // Set audio's volume
+  boltDropAudio.volume = 0.4
+  gemShotAudio.volume = 0.2
+  cloudHittedAudio.volume = 0.3
+
   // Create the grid
   function createGrid() {
     for (let i = 0; i < cellCount; i++) {
@@ -51,6 +68,7 @@ function init() {
     enemiesMoveInterval = setInterval(enemiesMovement, 1000)
     enemiesBoltInterval = setInterval(enemiesShot, 2000)
     enemiesStart = [1, 2, 3, 4, 5, 6, 7, 8, 11, 12, 13, 14, 15, 16, 17, 18, 21, 22, 23, 24, 25, 26, 27, 28, 31, 32, 33, 34, 35, 36, 37, 38]
+    backgroundMusic.play()
   }
 
   // ---------------------------------------------- GEM ---------------------------------------------- //
@@ -94,7 +112,8 @@ function init() {
   function gemShot() {
     let shotPosition = gemCurrentPosition
     let shotInterval = null
-
+    gemShotAudio.currentTime = 0
+    gemShotAudio.play()
     function shotMovement() {
       cells[shotPosition].classList.remove('rainbow-shot')
       shotPosition -= width
@@ -109,6 +128,8 @@ function init() {
       let killed
       if (cells[shotPosition].classList.contains('dark-clouds')) {
         score += 100
+        cloudHittedAudio.currentTime = 0
+        cloudHittedAudio.play()
         scoreDisplay.innerText = score
         killed = enemies.indexOf(shotPosition)
         cloudsKilled.push(killed)
@@ -202,11 +223,12 @@ function init() {
         return
       }
       cells[boltPosition].classList.add('drop-lightning')
-
+      boltDropAudio.play()
       // Check impact
       if (cells[boltPosition].classList.contains('gem')) {
         gemLives -= 1
         removeLives()
+        gemHittedAudio.play()
         cells[boltPosition].classList.remove('drop-lightning')
 
         // Adding boom animation
@@ -243,6 +265,7 @@ function init() {
       clearInterval(enemiesMoveInterval)
       clearInterval(enemiesBoltInterval)
       alert.classList.remove('display-none')
+      youWonAudio.play()
       alertResult.innerText = 'You won!'
       alertScore.innerText = `score: ${score}`
     }
@@ -253,6 +276,7 @@ function init() {
       if (item > 89 || gemLives === 0) {
         clearInterval(enemiesMoveInterval)
         clearInterval(enemiesBoltInterval)
+        youLostAudio.play()
         alert.classList.remove('display-none')
         alertResult.innerText = 'You lost!'
         alertScore.innerText = `score: ${score}`
@@ -281,6 +305,27 @@ function init() {
     liveOne.classList.remove('visibility-hidden')
     liveTwo.classList.remove('visibility-hidden')
     liveThree.classList.remove('visibility-hidden')
+    backgroundMusic.pause()
+    backgroundMusic.currentTime = 0
+  }
+
+  function muteAudio() {
+    if (muteSound === false) {
+      allAudioElements.forEach(item => item.muted = true)
+      muteSound = true
+      muteBtn.disabled = true
+      muteBtn.classList.add('sound-off')
+    } else if (muteSound === true) {
+      allAudioElements.forEach(item => item.muted = false)
+      muteSound = false
+      muteBtn.disabled = true
+      muteBtn.classList.remove('sound-off')
+    }
+    setTimeout(disableButton, 1)
+  }
+
+  function disableButton() {
+    muteBtn.disabled = false
   }
 
   // Events
@@ -289,6 +334,7 @@ function init() {
   document.addEventListener('keyup', handleKeyup)
   backBtn.addEventListener('click', back)
   alertQuit.addEventListener('click', back)
+  muteBtn.addEventListener('click', muteAudio)
 }
 
 window.addEventListener('DOMContentLoaded', init)
