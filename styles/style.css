@@ -197,6 +197,8 @@ i{
   margin-bottom: 30px;
 }
 
+/* ------------------------------------ CLASSES ADDED AND REMOVED BY JAVSCRIPT ------------------------------------ */
+
 .gem{
   background-image: url('../assets/gem.png');
   background-size: cover;
@@ -246,7 +248,7 @@ i{
   visibility: hidden;
 }
 
-/* --------------------------------------------- ANIMATIONS --------------------------------------------- */
+/* --------------------------------------------- ANIMATIONS (stoled) --------------------------------------------- */
 
 @-webkit-keyframes pulse {
   from {
