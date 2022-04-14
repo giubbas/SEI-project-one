@@ -27,6 +27,7 @@ main, #dedica{
 #dedica{
   line-height: 1.4;
   color: black;
+  width: 500px;
 }
 
 #grid-wrapper{
