@@ -17,11 +17,16 @@ body{
   margin-left: 100px;
 }
 
-main{
+main, #dedica{
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+#dedica{
+  line-height: 1.4;
+  color: black;
 }
 
 #grid-wrapper{
