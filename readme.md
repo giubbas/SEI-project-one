@@ -75,7 +75,7 @@ Making Javascript was quite challenging. Generating enemy movement and hits was 
 
 ## Conclusions
 
-One of the greatest satisfactions is being able to create something you have imagined. 
+One of the greatest satisfactions was being able to create something you have imagined. 
 
 I had fun.
 Coding is great!
