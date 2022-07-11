@@ -36,10 +36,6 @@ I immediately made the basic structure of HTML and CSS and I generated the game 
 
 ![](readme-images/create-grid.png)
 
-<p align="center">
-<img src="readme-images/grid.jpg" width="400">
-</p>
-
 Then I moved on coding the game logic.
 I first created Gem and enemies characters and gave them the possibility to move.
 
