@@ -1,10 +1,10 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
 # Gem, the cloud
-## Riccardo Giubilo - Project 1
+## Riccardo Giubilo - Project 4 (1 week solo)
 
 ---
 ## Game's link
-link
+link 
 
 ## Brief
 Gem the cloud is a reinterpretation of the Space Invaders arcade game. They both have a similar game logic. 
@@ -24,7 +24,7 @@ Help Gem clear the storm by hitting him with rainbow shots and be careful not to
 * **Style the fonts**
 * **Animate the "PLAY" button**
 
-### Javascript
+### JavaScript
 * **Create the grid**
 * **Hold the key and buttons events**
 * **Write the functions that make the game work**
@@ -32,17 +32,37 @@ Help Gem clear the storm by hitting him with rainbow shots and be careful not to
 ---
 ## The approach taken
 
-I immediately made the basic structure of html and css and I generated the game grid on javascript. 
+I immediately made the basic structure of HTML and CSS and I generated the game grid in JavaScript. 
+<p align="center">
+<img src="readme-images/create-grid.png" width="400">
+</p>
+
 <p align="center">
 <img src="readme-images/grid.jpg" width="400">
 </p>
 
-Than I moved on coding the game logic.
+Then I moved on coding the game logic.
 I first created Gem and enemies characters and gave them the possibility to move.
+
+The image below shows how I implemented the enemies movement. Every time they reach the edge of the grid they go down of a square and they change direction horizontally.
+
 I made the Gem shots and I generated the lightning bolts by randomly selecting a shooter from the enemies that are still alive. 
 
-Than I made coded the win and loose game logic and I displayed the result by an alert that shows up at the center of the screen.
+<p align="center">
+<img src="readme-images/enemies-shot.png" width="400">
+</p>
 
+So in the same function I checked if gem was included in the missile's trajectory. If the impact occurred then I removed the bolt shot and addded a "blink" class to Gem.
+
+<p align="center">
+<img src="readme-images/check-impact.png" width="400">
+</p>
+
+For the win and loose game logic I made a function in which the user wins if the enemies array is equal to 0 and another function in which the user loose if the enemies reach the ground or Gem's life is equal to 0.
+
+<p align="center">
+<img src="readme-images/check-victory-game-over.png" width="400">
+</p>
 
 
 Lastly I did the style with CSS and I drew the characters on pixilart.com. 
@@ -53,9 +73,14 @@ I took the sounds effects and the background music from the internet.
 </p>
 
 ---
+## Wins
+
+* **I managed to implement all the basic features I wanted plus the sound on/off button.**
+* **I had enough time to do the style as I had imagined it and to draw some characters myself**
+
 ## Challenges
 
-Making Javascript was quite challenging. Generating enemy movement and hits was the hardest thing, as I expected, but also the addition of various features, such as the "quit" and the "sound/sound-off" buttons and the possibility of being able to restart the game, proved to be tricky to implement. 
+Building with JavaScript was quite challenging. Generating enemy movement and hits was the hardest thing, as I expected, but also the addition of various features, such as the "quit" and the "sound/sound-off" buttons and the possibility of being able to restart the game, proved to be tricky to implement. 
 
 ## Key learnings
 * **Learned how to disabled buttons after they are clicked**
@@ -73,10 +98,7 @@ Making Javascript was quite challenging. Generating enemy movement and hits was 
 ### Game screen
 ![](readme-images/Screenshot%20-two.png)
 
-## Conclusions
-
-One of the greatest satisfactions is being able to create something you have imagined. 
-
-I had fun.
-Coding is great!
+## Potential future features
+* **Add on eor more levels of difficulty**
+* **Make it responsive**
 
