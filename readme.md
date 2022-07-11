@@ -33,9 +33,8 @@ Help Gem clear the storm by hitting him with rainbow shots and be careful not to
 ## The approach taken
 
 I immediately made the basic structure of HTML and CSS and I generated the game grid in JavaScript. 
-<p align="center">
-<img src="readme-images/create-grid.png" width="400">
-</p>
+
+![](readme-images/create-grid.png)
 
 <p align="center">
 <img src="readme-images/grid.jpg" width="400">
@@ -48,22 +47,15 @@ The image below shows how I implemented the enemies movement. Every time they re
 
 I made the Gem shots and I generated the lightning bolts by randomly selecting a shooter from the enemies that are still alive. 
 
-<p align="center">
-<img src="readme-images/enemies-shot.png" width="400">
-</p>
+![](readme-images/enemies-shot.png)
 
 So in the same function I checked if gem was included in the missile's trajectory. If the impact occurred then I removed the bolt shot and addded a "blink" class to Gem.
 
-<p align="center">
-<img src="readme-images/check-impact.png" width="400">
-</p>
+![](readme-images/check-impact.png)
 
 For the win and loose game logic I made a function in which the user wins if the enemies array is equal to 0 and another function in which the user loose if the enemies reach the ground or Gem's life is equal to 0.
 
-<p align="center">
-<img src="readme-images/check-victory-game-over.png" width="400">
-</p>
-
+![](readme-images/check-victory-game-over.png)
 
 Lastly I did the style with CSS and I drew the characters on pixilart.com. 
 I wanted to give an old arcade style to the game so I made some pixel art graphics. 
