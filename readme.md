@@ -39,23 +39,23 @@ I immediately made the basic structure of HTML and CSS and I generated the game 
 Then I moved on coding the game logic.
 I first created Gem and enemies characters and gave them the possibility to move.
 
-The image below shows how I implemented the enemies movement. Every time they reach the edge of the grid they go down of a square and they change direction horizontally.
+The image below shows how I implemented the enemies movement. Every time they reach the edge of the grid they go down a square and they change direction horizontally.
 
 I made the Gem shots and I generated the lightning bolts by randomly selecting a shooter from the enemies that are still alive. 
 
 ![](readme-images/enemies-shot.png)
 
-So in the same function I checked if gem was included in the missile's trajectory. If the impact occurred then I removed the bolt shot and addded a "blink" class to Gem.
+So in the same function I checked if Gem was included in the missile's trajectory. If the impact occurred then I removed the bolt shot and added a "blink" class to Gem.
 
 ![](readme-images/check-impact.png)
 
-For the win and loose game logic I made a function in which the user wins if the enemies array is equal to 0 and another function in which the user loose if the enemies reach the ground or Gem's life is equal to 0.
+For the win and lose game logic I made a function in which the user wins if the enemies array is equal to 0 and another function in which the user lose if the enemies reach the ground or Gem's life is equal to 0.
 
 ![](readme-images/check-victory-game-over.png)
 
 Lastly I did the style with CSS and I drew the characters on pixilart.com. 
 I wanted to give an old arcade style to the game so I made some pixel art graphics. 
-I took the sounds effects and the background music from the internet. 
+I took the sound effects and the background music from the internet. 
 <p align="center">
 <img src="assets/gem.png">
 </p>
@@ -87,6 +87,6 @@ Building with JavaScript was quite challenging. Generating enemy movement and hi
 ![](readme-images/Screenshot%20-two.png)
 
 ## Potential future features
-* **Add on eor more levels of difficulty**
+* **Add one or more levels of difficulty**
 * **Make it responsive**
 
