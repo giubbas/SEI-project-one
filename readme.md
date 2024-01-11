@@ -4,7 +4,7 @@
 
 ---
 ## Game's link
-[Check out the game!](https://giubbas.github.io/gem-the-cloud/)
+[Check out the game!](https://giubbas.github.io/ga-project-1/)
 
 ## Brief
 Gem the cloud is a reinterpretation of the Space Invaders arcade game. They both have a similar game logic. 
